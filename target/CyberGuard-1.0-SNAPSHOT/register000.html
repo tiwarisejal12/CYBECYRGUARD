@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>CyberGuard Registration</title>
+    
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #172554, #4c1d95);
+        }
+
+        .register-container {
+            width: 400px;
+            padding: 35px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #172554;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 17px;
+            border: 1px solid #d1d5db;
+            border-radius: 9px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #4c1d95;
+            box-shadow: 0 0 5px rgba(76, 29, 149, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 9px;
+            background: linear-gradient(90deg, #172554, #4c1d95);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .login {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .login a {
+            color: #4c1d95;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .login a:hover {
+            text-decoration: underline;
+        }
+
+        .back-home {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .back-home a {
+            color: #172554;
+            text-decoration: none;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="register-container">
+
+        <div class="logo">🛡️</div>
+
+        <h2>Create Your Account</h2>
+
+        <p class="subtitle">
+            Join CyberGuard and improve your cyber safety
+        </p>
+
+        <form action="RegisterServ" method="post">
+
+            <label>Name</label>
+            <input type="text"
+                   name="name"
+                   placeholder="Enter your name"
+                   required>
+
+            <label>Email</label>
+            <input type="email"
+                   name="email"
+                   placeholder="Enter your email"
+                   required>
+
+            <label>Password</label>
+            <input type="password"
+                   name="password"
+                   placeholder="Create a password"
+                   required>
+
+            <button type="submit">Create Account</button>
+
+
+        </form>
+
+        <div class="login">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </div>
+
+        <div class="back-home">
+            <a href="Home.html">← Back to Home</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

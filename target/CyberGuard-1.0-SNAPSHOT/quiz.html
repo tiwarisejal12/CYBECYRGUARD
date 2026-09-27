@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Safety Quiz | CyberGuard</title>
+     <link rel="stylesheet" href="style.css?v=3">
+
+
+</head>
+<body>
+    <form action="QuizServlet" method="post">
+  <nav>
+    <div class="logo">
+        <span class="icon">🛡️</span>
+        <div>
+            <h2>CyberGuard</h2>
+            <p>Cyber Safety & Data Protection</p>
+        </div>
+    </div>
+</nav>
+    <section class="page-header">
+        <h1>📝Cyber Safety Quiz</h1>
+        <p>Test your Knowledge of password and data safety</p>
+    </section>
+
+<section class="content">
+
+
+        <div class="question">
+            <h3>1. Which is a good password practice?</h3>
+
+            <input type="radio" name="q1" value="correct"> Use a long and unique password<br>
+            <input type="radio" name="q1" value="wrong"> Use your birthday<br>
+            <input type="radio" name="q1" value="wrong"> Use 123456<br>
+            <input type="radio" name="q1" value="wrong"> Use your name
+        </div>
+
+        <div class="question">
+            <h3>2. Should you share your OTP?</h3>
+
+            <input type="radio" name="q2" value="wrong"> Yes<br>
+            <input type="radio" name="q2" value="correct"> No
+        </div>
+
+        <div class="question">
+            <h3>3. Use same password everywhere?</h3>
+
+            <input type="radio" name="q3" value="wrong"> Yes<br>
+            <input type="radio" name="q3" value="correct"> No
+        </div>
+
+        <div class="question">
+            <h3>4. Which should remain private?</h3>
+
+            <input type="radio" name="q4" value="correct"> Bank PIN<br>
+            <input type="radio" name="q4" value="wrong"> Favourite Food
+        </div>
+
+        <div class="question">
+            <h3>5. What is 2FA?</h3>
+
+            <input type="radio" name="q5" value="wrong"> Faster Internet<br>
+            <input type="radio" name="q5" value="correct"> Extra Security Layer
+        </div>
+
+    <button type="submit" class="btn">
+    Submit Quiz
+         </button>
+
+    
+
+    
+
+    <hr>
+
+    <div class="info-box">
+
+        <h2>🛡️ Safety Check</h2>
+
+        <input type="checkbox"  name="otp" id="otp"> I never share OTPs<br>
+        <input type="checkbox" name="unique" id="unique"> I use unique passwords<br>
+        <input type="checkbox" name="twofa" id="twofa"> I use 2FA<br>
+        <input type="checkbox" name="privacy" id="privacy"> I review privacy settings<br>
+        <input type="checkbox" name="sharing" id="sharing"> I avoid oversharing<br><br>
+
+        <button type="submit" class="btn" >
+            Check Safety Score
+        </button>
+
+        
+
+    </div>
+    <div class="nav-buttons">
+    <a href="data.html" class="btn">← Back</a>
+    
+</div>
+
+</section>
+    </form>
+    <script>
+sessionStorage.setItem("loggedIn", "true");
+</script>
+</body>
+</html>
