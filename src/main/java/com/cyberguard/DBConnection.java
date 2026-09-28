@@ -5,37 +5,34 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
-    private static final String URL =
-            "jdbc:mysql://localhost:3306/cyberguard";
-
-    private static final String USER = "root";
-
-    private static final String PASSWORD = "12345";
-
     public static Connection getConnection() {
 
         try {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
+            String host = System.getenv("mysql.railway.internal");
+            String port = System.getenv("3306");
+            String database = System.getenv("railway");
+            String user = System.getenv("root");
+            String password = System.getenv("JYKzMQTjRYvUuMSiuIFavuUDHHpOFqil");
+
+            String url =
+                    "jdbc:mysql://mysql.railway.internal:3306/railway";
+
             Connection con =
                     DriverManager.getConnection(
-                            URL,
-                            USER,
-                            PASSWORD);
+                            url,
+                            user,
+                            password);
 
-            System.out.println(
-                    "MySQL Connected Successfully!"
-            );
+            System.out.println("MySQL Connected Successfully!");
 
             return con;
 
         } catch (Exception e) {
 
-            System.out.println(
-                    "Database Connection Failed: "
-                    + e.getMessage()
-            );
+            e.printStackTrace();
 
             return null;
         }
