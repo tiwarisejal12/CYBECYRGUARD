@@ -62,7 +62,7 @@ public class RegisterServ extends HttpServlet {
 
             // Google Sheet URL
             String webAppUrl =
-                    "https://script.google.com/macros/s/AKfycbw_ZSyuslzK9LlnibjwCtD5d619xtjwDrohsYhrUD2WWyh6558MfxuRAbeTtkwDE1dk/exec";
+                    "https://script.google.com/macros/s/AKfycbxtzb-1-Sli6_jRC19UjSuDhBMUg1Vr74lPBsZTz4nQvv3OMhZIfJJnQkdo1JaKBVOT/exec";
 
             String data =
                      "userId=" + URLEncoder.encode(String.valueOf(userId), "UTF-8")

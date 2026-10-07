@@ -56,22 +56,7 @@ public class QuizServlet extends HttpServlet {
         try {
 
             Connection con = DBConnection.getConnection();
-
-            String sql =
-                    "INSERT INTO quiz_results "
-                    + "(quiz_score, safety_score, overall_score) "
-                    + "VALUES (?, ?, ?)";
-
-            PreparedStatement ps =
-                    con.prepareStatement(sql);
-
-            ps.setInt(1, quizScore);
-            ps.setInt(2, safetyScore);
-            ps.setInt(3, overall);
-
-            ps.executeUpdate();
-
-            // Session Data
+             // Session Data
             HttpSession session = request.getSession();
 
             Integer userId =
@@ -80,9 +65,26 @@ public class QuizServlet extends HttpServlet {
             String userName =
                     (String) session.getAttribute("userName");
 
+           String sql =
+                 "INSERT INTO quiz_results "
+                 + "(user_id, user_name, quiz_score, safety_score, overall_score) "
+                 + "VALUES (?, ?, ?, ?, ?)";
+
+            PreparedStatement ps =
+                    con.prepareStatement(sql);
+
+            ps.setInt(1, userId);
+            ps.setString(2, userName);
+            ps.setInt(3, quizScore);
+            ps.setInt(4, safetyScore);
+            ps.setInt(5, overall);
+
+            ps.executeUpdate();
+
+
             // Google Sheet URL
             String webAppUrl =
-                    "https://script.google.com/macros/s/AKfycbw_ZSyuslzK9LlnibjwCtD5d619xtjwDrohsYhrUD2WWyh6558MfxuRAbeTtkwDE1dk/exec";
+                    "https://script.google.com/macros/s/AKfycbxtzb-1-Sli6_jRC19UjSuDhBMUg1Vr74lPBsZTz4nQvv3OMhZIfJJnQkdo1JaKBVOT/exec";
 
             String data =
                     "userId=" + URLEncoder.encode(String.valueOf(userId), "UTF-8")
